@@ -7,6 +7,14 @@
   pointer-events: none;
 }
 
+
+/* Rest of your CSS */
+body {
+  font-family: "Baloo 2", cursive !important;
+  text-rendering: optimizeLegibility;
+  font-weight: initial;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -25,6 +33,7 @@
 }
 
 .App-link {
+  font-family: "Baloo 2", cursive;
   color: #61dafb;
 }
 

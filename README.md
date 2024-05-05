@@ -1,70 +1,133 @@
-# Getting Started with Create React App
+#  Flight Information Manager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contain Frontend app for the Flight  Information Manager App
 
-## Available Scripts
 
-In the project directory, you can run:
+#  React Redux Toolkit Frontend
 
-### `npm start`
+## Project structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+flight-management-app/
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+├── src/
 
-### `npm test`
+   ├── components/
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+      ├── common/
+         ├── Footer
+         ├── Header
+         └── SideBar
 
-### `npm run build`
+      ├── FlightsComponents/
+         ├── Cards
+         ├── Form
+         ├── Search
+         ├── Table
+         └── Pagination
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  ├── pages/
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+     ├── auth/
+        ├── Login
+        └── Register
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ├── Flights/
 
-### `npm run eject`
+      ├── FlightCard
+      └── FlightList
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+  ├── context/
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+      └── TheamContext
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+  ├── service/
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+      ├── header/
+        └── apiHeader
 
-## Learn More
+      ├── user/
+        └── userService
+        
+      ├── Flights/
+        └── FlightService
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  ├── store/
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+      ├── flights/
+        ├── flightSclice
+        └── flightThunk
 
-### Code Splitting
+     ├── user/
+        ├── userSclice
+        └── userThunk
+    └── index
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   ├── App
 
-### Analyzing the Bundle Size
+   ├── index
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+├── public/
 
-### Making a Progressive Web App
+   ├── index
+   └── App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+├── package.json
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Tech used
 
-### Deployment
+- React-strap (Bootstrap) CSS framework for styling
+- React
+- Redux Toolkit
+- React Router
+- Formik
+- Eslint
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## How to run locally
 
-### `npm run build` fails to minify
+Clone or download project go to the Front-end
+Inside Front-end open node console
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Then type  `npm install`
+Run `npm start` if you have node installed locally.
+
+### Run Api server
+
+Need to run serve Run `npm run server` if you have node installed locally.
+Open your browse to `localhost:5000`
+
+Open Swagger Documentations Open your browse to `localhost:5000/api-docs/`
+
+
+## Rest api structure
+
+### User api
+
+Methods | Urls | Action	
+--- | --- | ---
+**GET** | `/api/authors` |  list All Authors
+**GET**| `/api/author/:id` |  list single Author
+**POST** | `/auth/login`    | login to app
+**POST** | `/auth/register` | create new user
+**POST** | `/auth/refresh`  | create New token 
+**PUT** | `/api/author/:id` | Edit Author 
+**DELETE** | `/api/author/:id` |  delete Author 
+
+### Flight api
+
+Methods | Urls | Action	
+--- | --- | ---
+**GET** | `/flight`              |  List flights
+**GET** | `/flight/:id/photo`    |  flight with photo
+**POST** | `/flights`            | create new flight without photo
+**POST** | `/flights/withPhoto`  | create new flight with photo
+**PUT** | `/flight/:id`          | Edit flight 
+**PUT** | `/flight/:id/withPhot` | Edit flight with photo
+**DELETE** | `/flights/:id`      |  delete flight 
+
+
+## Tests 
+
+Open Project
+
+Open node console run `npm test` to have jest start and watch the tests.
